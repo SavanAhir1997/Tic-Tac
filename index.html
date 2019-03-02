@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="sweetalert.css">
+    <script src="sweetalert.js"></script>
+    
+    <title>Tic Tac</title>
+    <style>
+        #main{width: 450px;height: 450px;border: 2px solid black;border: none;margin-left: 450px; }
+        #btn{width: 450px;height: auto;margin-left: 450px;margin-top: 20px;border-radius: 250px}
+        input{width: 150px;height: 150px;float: left; font-family: Geneva;font-size: 50px;border: 2px solid black;background: transparent;outline: none}
+        #btn1{border-top: none;border-left: none}
+        #btn2{border-top: none;}
+        #btn3{border-top: none;border-right: none}
+        #btn4{border-left: none;}
+        
+        #btn6{border-right: none}
+        #btn7{border-bottom: none;border-left: none}
+        #btn8{border-bottom: none;}
+        #btn9{border-bottom: none;border-right: none}
+    </style>
+
+</head>
+<body>
+    <div id="main">
+        <input type="button" id="btn1" onclick="clickbtn('btn1')">
+        <input type="button" id="btn2" onclick="clickbtn('btn2')">
+        <input type="button" id="btn3" onclick="clickbtn('btn3')">
+        <input type="button" id="btn4" onclick="clickbtn('btn4')">
+        <input type="button" id="btn5" onclick="clickbtn('btn5')">
+        <input type="button" id="btn6" onclick="clickbtn('btn6')">
+        <input type="button" id="btn7" onclick="clickbtn('btn7')">
+        <input type="button" id="btn8" onclick="clickbtn('btn8')">
+        <input type="button" id="btn9" onclick="clickbtn('btn9')">
+
+    </div>
+    
+    <input type="button" id="btn" onclick="reset()" value="RESET"> 
+
+    <script>
+         var game=1;
+        function clickbtn(btn){
+            if(game==1){
+           
+            document.getElementById(btn).value="X";
+            game-=1;
+            document.getElementById(btn).disabled="disabled"
+            win();
+            }
+        else{
+
+            document.getElementById(btn).value="O"
+            game+=1;
+            document.getElementById(btn).disabled="disabled"
+            win();
+        }
+        }
+
+        function win()
+        {
+
+            if(
+
+                document.getElementById("btn1").value=="X"&&
+                document.getElementById("btn2").value=="X"&&
+                document.getElementById("btn3").value=="X"||
+
+                document.getElementById("btn4").value=="X"&&
+                document.getElementById("btn5").value=="X"&&
+                document.getElementById("btn6").value=="X"||
+
+                document.getElementById("btn7").value=="X"&&
+                document.getElementById("btn8").value=="X"&&
+                document.getElementById("btn9").value=="X"||
+
+                document.getElementById("btn1").value=="X"&&
+                document.getElementById("btn4").value=="X"&&
+                document.getElementById("btn7").value=="X"||
+
+                document.getElementById("btn2").value=="X"&&
+                document.getElementById("btn5").value=="X"&&
+                document.getElementById("btn8").value=="X"||
+
+                document.getElementById("btn3").value=="X"&&
+                document.getElementById("btn6").value=="X"&&
+                document.getElementById("btn9").value=="X"||
+
+                document.getElementById("btn1").value=="X"&&
+                document.getElementById("btn5").value=="X"&&
+                document.getElementById("btn9").value=="X"||
+
+                document.getElementById("btn3").value=="X"&&
+                document.getElementById("btn5").value=="X"&&
+                document.getElementById("btn7").value=="X"
+
+            )
+            {document.write("X win!!!")
+            reset();}
+
+            else if
+            (                
+
+                document.getElementById("btn1").value=="O"&&
+                document.getElementById("btn2").value=="O"&&
+                document.getElementById("btn3").value=="O"||
+
+                document.getElementById("btn4").value=="O"&&
+                document.getElementById("btn5").value=="O"&&
+                document.getElementById("btn6").value=="O"||
+
+                document.getElementById("btn7").value=="O"&&
+                document.getElementById("btn8").value=="O"&&
+                document.getElementById("btn9").value=="O"||
+
+                document.getElementById("btn1").value=="O"&&
+                document.getElementById("btn4").value=="O"&&
+                document.getElementById("btn7").value=="O"||
+
+                document.getElementById("btn2").value=="O"&&
+                document.getElementById("btn5").value=="O"&&
+                document.getElementById("btn8").value=="O"||
+
+                document.getElementById("btn3").value=="O"&&
+                document.getElementById("btn6").value=="O"&&
+                document.getElementById("btn9").value=="O"||
+
+                document.getElementById("btn1").value=="O"&&
+                document.getElementById("btn5").value=="O"&&
+                document.getElementById("btn9").value=="O"||
+
+                document.getElementById("btn3").value=="O"&&
+                document.getElementById("btn5").value=="O"&&
+                document.getElementById("btn7").value=="O"
+
+           )
+           /*swal({
+                title: "O win!!!",
+                });*/
+           // {document.write("O win!!!")
+            reset();
+        }
+            
+
+
+        }
+        function reset(){
+            document.getElementById("btn1").value=""
+            document.getElementById("btn2").value=""
+            document.getElementById("btn3").value=""
+            document.getElementById("btn4").value=""
+            document.getElementById("btn5").value=""
+            document.getElementById("btn6").value=""
+            document.getElementById("btn7").value=""
+            document.getElementById("btn8").value=""
+            document.getElementById("btn9").value=""
+            
+
+            document.getElementById("btn1").disabled=""
+            document.getElementById("btn2").disabled=""
+            document.getElementById("btn3").disabled=""
+            document.getElementById("btn4").disabled=""
+            document.getElementById("btn5").disabled=""
+            document.getElementById("btn6").disabled=""
+            document.getElementById("btn7").disabled=""
+            document.getElementById("btn8").disabled=""
+            document.getElementById("btn9").disabled=""
+        }
+    </script>
+    
+                  
+    </div>
+</body>
+</html>
